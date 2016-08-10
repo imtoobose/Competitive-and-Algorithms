@@ -85,11 +85,11 @@ ull solve(int a, int b, vector<vector<ull>> combos){
         /*
         - Otherwise distribute all games so that we get 19:19
         - After that the only possible outcome is a winner through
-        a lead of TWO. 
+          a lead of TWO. 
         - As every game alternates between having two
-        outcomes (winner A or winner B) then only one (TIE), till
-        we reach the loser's count of wins.
-        - this amounts to  exp(2, loser's games- 19 games won already)
+          outcomes (winner A or winner B) then only one (TIE), till
+          we reach the loser's count of wins.
+        - This amounts to  exp(2, loser's games- 19 games won already)
         - As these distributions are dependent, we do a multiplication (AND)
         */
             return (combos[38][19]*(FastExpo(2,(min(a,b)-19))))%MOD;
